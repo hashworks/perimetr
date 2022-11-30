@@ -4,6 +4,8 @@ A system to securly handle digital heritage. Provides one or more layers of encr
 
 This was developed as a Proof-Of-Concept for my master thesis at the [Leipzig University of Applied Sciences](https://www.htwk-leipzig.de/en/htwk-leipzig/).
 
+![webservice](.images/webservice.png)
+
 ## Provided tools
 
 This repo provides three binaries, which must be defined when one runs `cargo build`.
@@ -64,8 +66,6 @@ Needs a postgresql database, even for development:
 ```
 podman run --rm --name perimetr-pg -p 5432:5432 -e "POSTGRES_PASSWORD=postgres" docker.io/library/postgres:latest
 ```
-
-![webservice](.images/webservice.png)
 
 ### `perimetr-dms`
 

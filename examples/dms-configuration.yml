@@ -1,0 +1,20 @@
+timestamp_sources:
+  - https://example.net/dms
+pgp_keyring_file: ./example.kbx
+threshold_actions:
+  - threshold: 604800
+    triggered: false
+    commands:
+    - program: sendmail
+      args: ["mail@example.net"]
+      working_dir: "."
+      stdin: |
+        Subject: [WARNING] No valid timestamp since a week
+        There has been no valid signed timestamp since over a week.
+  - threshold: 1209600
+    triggered: false
+    commands:
+    - program: curl
+      args: ["--fail", "--location", "--data", "@-", "http://127.0.0.1:8080/layer/b0bb162f-7db3-43ea-aca3-f91884133740/share"]
+      working_dir: "."
+      stdin: "a-symmetric-key-or-a-vsss-share"

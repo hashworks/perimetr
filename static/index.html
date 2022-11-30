@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" href="data:image/png;base64,">
+<link rel="stylesheet" href="main.css">
+
+<title>Perimetr</title>
+
+<article>
+    <header>
+        <h1>Perimetr</h1>
+    </header>
+
+    <p>Layer files are listed at <a href=/data>/data</a>.</p>
+</article>
+
+<article>
+    <header>
+        <h3>VSSS Shares</h3>
+    </header>
+    <form id="shareform">
+        <fieldset id="sharefieldset" disabled>
+            <legend>Provide a share for a layer</legend>
+
+            <label for="layer">Layer: </label>
+            <select id="layer" name="layer">
+                <option>Loading…</option>
+            </select><br />
+            <label for="share">Share: </label>
+            <input id="share" type="password" name="share" /><br />
+            <br />
+            <input type="submit" value="Submit" />
+            <p id="formresponse"></p>
+        </fieldset>
+    </form>
+</article>
+
+<article>
+    <header>
+        <h3>Layer Status</h3>
+    </header>
+    <ul id="layerstatus">
+        Loading…
+    </ul>
+</article>
+
+<script src="main.js" type=""></script>

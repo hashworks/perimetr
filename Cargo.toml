@@ -1,0 +1,51 @@
+[package]
+name = "perimetr"
+version = "0.1.0"
+edition = "2021"
+
+default-run = "perimetr-server"
+
+[[bin]]
+name = "perimetr"
+path = "src/cli.rs"
+
+[[bin]]
+name = "perimetr-dms"
+path = "src/dms.rs"
+
+[[bin]]
+name = "perimetr-server"
+path = "src/server.rs"
+
+[dependencies]
+base64 = "0.13"
+log = "0.4"
+env_logger = "0.10"
+serde = "1"
+serde_json = "1"
+serde_yaml = "0.9"
+uuid = { version = "1", features = ["v4", "serde"] }
+vsss-rs = { version = "2.1.0", features = ["std"] }
+ff = "0.12"
+rand = "0.8"
+bls12_381_plus = "0.7"
+clap = "4"
+
+# CLI only
+rpassword = "7"
+
+# DMS only
+reqwest = { version = "0.11", features = ["blocking"] }
+chrono = "0.4"
+
+# Server only
+actix = "0.13"
+actix-web = "4"
+actix-cors = "0.6"
+actix-files = "0.6"
+actix-rt = "2"
+
+[dependencies.sqlx]
+version = "0.6"
+default-features = false
+features = [ "runtime-actix-rustls", "postgres", "macros", "migrate" ]
